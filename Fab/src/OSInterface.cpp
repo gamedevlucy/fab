@@ -1,17 +1,20 @@
 #include "pch.h"
 
-#include "System.h"
+#include "OSInterface.h"
 #include "SystemType.h"
 
-System::System(SystemType type) 
-    : _type(type)
+OSInterface::OSInterface() 
+    : System(SystemType::OSInterface)
 {
 
 }
 
-System::~System() = default;
+OSInterface::~OSInterface() = default;
 
-SystemType System::getType() const
+void OSInterface::initialize()
 {
-    return _type;
+}
+
+void OSInterface::update(float dt)
+{
 }

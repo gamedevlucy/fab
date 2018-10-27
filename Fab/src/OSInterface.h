@@ -1,16 +1,16 @@
 #pragma once
 #include "SystemType.h"
+#include "System.h"
 
-class System 
+class OSInterface : public System 
 {
 public:
-    System(SystemType type);
-    virtual ~System();
+    OSInterface();
+    virtual ~OSInterface();
 
-    virtual void initialize() = 0;
-    virtual void update(float dt) = 0;
+    virtual void initialize() override;
+    virtual void update(float dt) override;
 
-    virtual SystemType getType() const final;
 private:
 };
 

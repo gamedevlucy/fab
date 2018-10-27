@@ -3,7 +3,7 @@
 enum class SystemType : uint8_t 
 {
     Graphics,
-    OsInteface,
+    OSInterface,
     Physics,
     UI,
     Count

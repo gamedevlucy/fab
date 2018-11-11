@@ -171,6 +171,8 @@
     <ClInclude Include="..\src\pch.h" />
     <ClInclude Include="..\src\System.h" />
     <ClInclude Include="..\src\SystemType.h" />
+    <ClInclude Include="..\src\Transform.h" />
+    <ClInclude Include="..\src\Vector3.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Component.cpp" />
@@ -185,6 +187,8 @@
     </ClCompile>
     <ClCompile Include="..\src\System.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Transform.cpp" />
+    <ClCompile Include="..\src\Vector3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

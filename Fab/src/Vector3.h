@@ -9,8 +9,8 @@ public:
 	
 	float x, y, z;
 
-	Vector3 crossProduct(const Vector3& v1, const Vector3& v2);
-	float dotProduct(const Vector3& v1, const Vector3& v2);
+	Vector3 crossProduct(const Vector3& v2);
+	float dotProduct(const Vector3& v2);
 
 	Vector3 operator + (const Vector3& v2);
 	Vector3 operator - (const Vector3& v2);
@@ -21,5 +21,5 @@ public:
 	Vector3& operator -= (const Vector3& v2);
 	Vector3& operator *= (const float scalar);
 	Vector3& operator /= (const float scalar);
-	bool operator== (const Vector3& v2);
+	bool operator == (const Vector3& v2);
 };

@@ -1,6 +1,9 @@
 #pragma once
 #include "SystemType.h"
 #include "System.h"
+namespace sf {
+    class Window;
+}
 
 class OSInterface : public System 
 {
@@ -12,6 +15,7 @@ public:
     virtual void update(float dt) override;
 
 private:
+    sf::Window* mWindow;
 };
 
 //

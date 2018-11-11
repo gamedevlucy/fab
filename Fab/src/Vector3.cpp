@@ -18,14 +18,14 @@ Vector3::Vector3(const Vector3& copy) : x(copy.x), y(copy.y), z(copy.z)
 {
 }
 
-Vector3 Vector3::crossProduct(const Vector3& v1, const Vector3& v2)
+Vector3 Vector3::crossProduct(const Vector3& v2)
 {
-	return Vector3((v1.y * v2.z) - (v1.z * v2.y), (v1.z * v2.x) - (v1.x * v2.z), (v1.x * v2.y) - (v1.y * v2.x));
+	return Vector3((y * v2.z) - (z * v2.y), (z * v2.x) - (x * v2.z), (x * v2.y) - (y * v2.x));
 }
 
-float Vector3::dotProduct(const Vector3& v1, const Vector3& v2)
+float Vector3::dotProduct(const Vector3& v2)
 {
-	return (v1.x * v2.x) + (v1.y * v2.y) + (v1.z * v2.z);
+	return (x * v2.x) + (y * v2.y) + (z * v2.z);
 }
 
 Vector3 Vector3::operator+(const Vector3& vector)

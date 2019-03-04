@@ -5,15 +5,27 @@ template<typename DataType>
 class Delegate 
 {
 public:
-    Delegate();
-    virtual ~Component();
+  Delegate() = default;
 
-    // todo figure out how to make this
-    // data driven
-    virtual void initialize() = 0;
-    virtual void update(float dt) = 0;
 
-    virtual ComponentType getType() const final;
+  void subscribe(const std::string& key, std::function<void(DataType)> callback)
+  {
+    mCallbacks.emplace(key, callback);
+  }
+
+  void unsubscribe(const std::string& key)
+  {
+    mCallbacks.erase(key);
+  }
+
+  void fire(DataType data)
+  {
+    for (const auto& callback : mCallbacks)
+    {
+      callback(data);
+    }
+  }
+
 private:
-    ComponentType mType;
+  std::unordered_map<std::string, std::function<void(DataType)>> mCallbacks;
 };

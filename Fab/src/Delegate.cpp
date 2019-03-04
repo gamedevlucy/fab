@@ -1,5 +1,5 @@
 #include "Precompiled.h"
-#include "Component.h"
+#include "Delegate.h"
 
 Component::Component()
     : mType(ComponentType::Count)

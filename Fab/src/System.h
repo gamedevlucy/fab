@@ -4,15 +4,15 @@
 class System 
 {
 public:
-    System(SystemType type);
-    virtual ~System();
+  System(SystemType type);
+  virtual ~System();
 
-    virtual void initialize() = 0;
-    virtual void update(float dt) = 0;
+  virtual void initialize() = 0;
+  virtual void update(float dt) = 0;
 
-    virtual SystemType getType() const final;
+  virtual SystemType getType() const final;
 private:
-    SystemType _type;
+  SystemType _type;
 };
 
 //

@@ -1,12 +1,13 @@
 #pragma once
-#include "ComponentType.h"
 
-class Component 
+class Delegate;
+class DelegateManager 
 {
 public:
-    Component();
-    Component(ComponentType type);
-    virtual ~Component();
+    DelegateManager();
+    ~DelegateManager();
+
+    void registerDelegate(Delegate& delegate);
 
     // todo figure out how to make this
     // data driven

@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "Precompiled.h"
 #include "GameObject.h"
 #include "ComponentType.h"
 

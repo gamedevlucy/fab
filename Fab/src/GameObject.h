@@ -6,13 +6,13 @@ enum class ComponentType : uint8_t;
 class GameObject 
 {
 public:
-    GameObject();
-    ~GameObject();
+  GameObject();
+  ~GameObject();
 
-    void registerComponent(Component& component);
-    Component* getComponent(ComponentType type);
-    void removeComponent(ComponentType type);
+  void registerComponent(Component& component);
+  Component* getComponent(ComponentType type);
+  void removeComponent(ComponentType type);
 
 private:
-    std::vector<Component*> _components;
+  std::vector<Component*> _components;
 };

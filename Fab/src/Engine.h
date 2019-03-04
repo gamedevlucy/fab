@@ -19,6 +19,6 @@ public:
     void shutdown();
 
 private:
-    bool _running;
-    std::vector<System*> _systems;
+    bool mIsRunning;
+    std::vector<System*> mSystems;
 };

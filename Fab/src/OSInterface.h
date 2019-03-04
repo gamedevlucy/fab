@@ -18,4 +18,3 @@ private:
     sf::Window* mWindow;
 };
 
-//

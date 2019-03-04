@@ -1,11 +1,11 @@
 #pragma once
-#include "ComponentType.h"
 
-class Component 
+
+template<typename DataType>
+class Delegate 
 {
 public:
-    Component();
-    Component(ComponentType type);
+    Delegate();
     virtual ~Component();
 
     // todo figure out how to make this

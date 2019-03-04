@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "Precompiled.h"
 #include "Vector3.h"
 
 Vector3::Vector3(float xx, float yy, float zz) : x(xx), y(yy), z(zz)
@@ -14,7 +14,10 @@ Vector3::Vector3(float init[3])
 
 Vector3::~Vector3() = default;
 
-Vector3::Vector3(const Vector3& copy) : x(copy.x), y(copy.y), z(copy.z)
+Vector3::Vector3(const Vector3& copy) 
+  : x(copy.x)
+  , y(copy.y)
+  , z(copy.z)
 {
 }
 
@@ -28,22 +31,22 @@ float Vector3::dotProduct(const Vector3& v2)
 	return (x * v2.x) + (y * v2.y) + (z * v2.z);
 }
 
-Vector3 Vector3::operator+(const Vector3& vector)
+Vector3 Vector3::operator+(const Vector3& vector) const
 {
 	return Vector3(x + vector.x, y + vector.y, z + vector.z);
 }
 
-Vector3 Vector3::operator-(const Vector3& vector)
+Vector3 Vector3::operator-(const Vector3& vector) const
 {
 	return Vector3(x - vector.x, y - vector.y, z - vector.z);
 }
 
-Vector3 Vector3::operator*(const float scalar)
+Vector3 Vector3::operator*(const float scalar) const
 {
 	return Vector3(x * scalar, y * scalar, z * scalar);
 }
 
-Vector3 Vector3::operator/(const float scalar)
+Vector3 Vector3::operator/(const float scalar) const
 {
 	return Vector3(x / scalar, y / scalar, z / scalar);
 }
@@ -88,7 +91,12 @@ Vector3& Vector3::operator/=(const float scalar)
 	return *this;
 }
 
-bool Vector3::operator==(const Vector3& vector)
+bool Vector3::operator==(const Vector3& vector) const
 {
 	return x == vector.x && y == vector.y && z == vector.z;
+}
+
+bool Vector3::operator!=(const Vector3& vector) const
+{
+  return !(*this == vector);
 }

@@ -1,12 +1,13 @@
-#include "pch.h"
+#include "Precompiled.h"
 #include "SystemType.h"
 #include "System.h"
 #include "Engine.h"
 
+delegate void WindowInit(int^ window);
 Engine::Engine()
-    : _running(false)
+    : mIsRunning(false)
 {
-    _systems.resize(static_cast<size_t>(SystemType::Count), nullptr);
+    mSystems.resize(static_cast<size_t>(SystemType::Count), nullptr);
 }
 
 Engine::~Engine()
@@ -17,7 +18,7 @@ Engine::~Engine()
 
 void Engine::initialize()
 {
-    for (System* system : _systems) 
+    for (System* system : mSystems) 
     {
         if (system)
         {
@@ -25,12 +26,12 @@ void Engine::initialize()
         }
     }
     // lets starto
-    _running = true;
+    mIsRunning = true;
 }
 
 void Engine::update(float dt)
 {
-    for (System* system : _systems) 
+    for (System* system : mSystems) 
     {
         if (system)
         {
@@ -41,26 +42,26 @@ void Engine::update(float dt)
 
 void Engine::registerSystem(System& system)
 {
-    _systems[static_cast<size_t>(system.getType())] = &system;
+    mSystems[static_cast<size_t>(system.getType())] = &system;
 }
 
 System* Engine::getSystem(SystemType type)
 {
     size_t systemIndex = static_cast<size_t>(type);
     // assert if it doesnt exist
-    if (_systems[systemIndex]) 
+    if (mSystems[systemIndex]) 
     {
-        return _systems[systemIndex];
+        return mSystems[systemIndex];
     }
     return nullptr;
 }
 
 bool Engine::isRunning() const
 {
-    return _running;
+    return mIsRunning;
 }
 
 void Engine::shutdown()
 {
-    _running = false;
+    mIsRunning = false;
 }
